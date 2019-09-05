@@ -1,0 +1,32 @@
+#header {
+  width: 50px;
+  margin: auto; }
+  #header #options-button {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  #header .options .option-container {
+    margin-bottom: 15px; }
+    #header .options .option-container .option-label {
+      display: inline;
+      margin-right: 10px; }
+  #header #date-container {
+    border: 3px black solid;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    cursor: pointer; }
+    #header #date-container.won {
+      color: green;
+      border-color: green; }
+    #header #date-container.lost {
+      color: red;
+      border-color: red; }
+
+.game {
+  display: block;
+  margin: auto;
+  padding: 20px; }
+  .game .block-row {
+    display: flex; }
