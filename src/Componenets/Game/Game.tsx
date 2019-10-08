@@ -7,8 +7,6 @@ import * as React from 'react';
 import { Block, IBlockProps } from '../Block/Block';
 import './Game.css';
 
-import * as Utils from "../../Utils/Utils";
-
 export interface IGameProps {
   readonly time: Date;
 }
@@ -263,7 +261,7 @@ export class Game extends React.Component<IGameProps, IGameState> {
                 isPressed={true}
                 value={blockProps.value}
                 key={i+"-"+j}
-                onClick={Utils.emptyFunction}
+                onClick={() => {return;}}
               />
             ))}
           </div>
