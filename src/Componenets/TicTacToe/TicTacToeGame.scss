@@ -1,0 +1,43 @@
+#tictactoeboard {
+  display: block;
+  width: 100vw;
+  position: relative;
+
+  .row {
+    display: flex;
+    .box {
+      cursor: default;
+      $size: 50px;
+      width: $size;
+      height: $size;
+      border: 3px solid black;
+      line-height: 30px;
+      width: 50px;
+      padding: 10px 0px;
+      text-align: center;
+      font-size: 30px;
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      &.X {
+        color: red;
+      }
+      &.O {
+        color: green;
+      }
+      &.clickable {
+        cursor: pointer;
+      }
+    }
+
+    &:first-child .box {
+      border-top: none;
+    }
+    &:last-child .box {
+      border-bottom: none;
+    }
+  }
+}

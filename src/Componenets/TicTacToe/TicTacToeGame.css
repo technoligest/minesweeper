@@ -1,0 +1,30 @@
+#tictactoeboard {
+  display: block;
+  width: 100vw;
+  position: relative; }
+  #tictactoeboard .row {
+    display: flex; }
+    #tictactoeboard .row .box {
+      cursor: default;
+      width: 50px;
+      height: 50px;
+      border: 3px solid black;
+      line-height: 30px;
+      width: 50px;
+      padding: 10px 0px;
+      text-align: center;
+      font-size: 30px; }
+      #tictactoeboard .row .box:first-child {
+        border-left: none; }
+      #tictactoeboard .row .box:last-child {
+        border-right: none; }
+      #tictactoeboard .row .box.X {
+        color: red; }
+      #tictactoeboard .row .box.O {
+        color: green; }
+      #tictactoeboard .row .box.clickable {
+        cursor: pointer; }
+    #tictactoeboard .row:first-child .box {
+      border-top: none; }
+    #tictactoeboard .row:last-child .box {
+      border-bottom: none; }
