@@ -8,10 +8,6 @@ import { GameBoardGenerator } from '../GameBoardGenerator';
 import { GameOptionsPane } from '../GameOptionsPane/GameOptionsPane';
 import { IGameOptions } from '../Interfaces';
 
-export interface IGameProps {
-  readonly time: Date;
-}
-
 export type IGameStatus = "notStarted" | "inProgress" | "lost" | "won";
 
 export interface IGameState {
@@ -27,10 +23,10 @@ export interface IGameState {
   readonly isDebugMode: boolean;
 }
 
-export class MineSweeperGame extends React.Component<IGameProps, IGameState> {
+export class MineSweeperGame extends React.Component<void, IGameState> {
   private gameBoardGenerator = new GameBoardGenerator();
-  constructor(props: IGameProps) {
-    super(props);
+  constructor() {
+    super();
     const gameSize = 10;
     this.state = {
       areOptionsOpen: false,
@@ -42,7 +38,6 @@ export class MineSweeperGame extends React.Component<IGameProps, IGameState> {
       numMines: gameSize,
     };
     this.setNewOptions = this.setNewOptions.bind(this);
-    // this.closeOptionsPane = this.closeOptionsPane.bind(this);
   }
 
   public render() {
