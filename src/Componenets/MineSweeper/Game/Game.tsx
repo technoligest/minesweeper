@@ -23,10 +23,10 @@ export interface IGameState {
   readonly isDebugMode: boolean;
 }
 
-export class MineSweeperGame extends React.Component<void, IGameState> {
+export class MineSweeperGame extends React.Component<any, IGameState> {
   private gameBoardGenerator = new GameBoardGenerator();
-  constructor() {
-    super();
+  constructor(props: any) {
+    super(props);
     const gameSize = 10;
     this.state = {
       areOptionsOpen: false,
@@ -126,7 +126,6 @@ export class MineSweeperGame extends React.Component<void, IGameState> {
     const minutes = d.getMinutes();
 
     return this.formatNumber(minutes) + ":" + this.formatNumber(seconds);
-    
   }
 
   private formatNumber(n: number) {
@@ -146,7 +145,7 @@ export class MineSweeperGame extends React.Component<void, IGameState> {
     if (!gameStartTime) {
       console.log("starting new game");
       gameStartTime = new Date();
-      timeout = setInterval(() => this.setState({}),1000);
+      timeout = setInterval(() => this.setState({}), 1000);
     }  
     const visited = this.getVisitedGridFromBlock(x, y);
     const newGrid = this.pressVisitedBlocks(this.state.grid, visited)
@@ -284,3 +283,9 @@ export class MineSweeperGame extends React.Component<void, IGameState> {
     });
   }
 }
+
+
+// TODO: add theme
+// TODO: Fix issue where numMines = 1 and size = 2. Play one game then try to reset.
+// TODO: Fix issue where size of game is too big the game crashes.
+// TODO

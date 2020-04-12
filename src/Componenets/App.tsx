@@ -4,8 +4,9 @@ import 'primereact/resources/themes/nova-light/theme.css';
 import './App.css';
 
 import * as React from 'react';
-import { Route } from 'react-router-dom';
-
+import { Route, Router } from 'react-router-dom';
+import { history } from 'src/history';
+import { RouterLinks } from 'src/routing/routerLinks';
 import { HomePage } from './HomePage/HomePage';
 import { MineSweeperGame } from './MineSweeper/Game/Game';
 import { TicTacToeGame } from './TicTacToe/TicTacToeGame';
@@ -14,11 +15,13 @@ class App extends React.Component {
   public render() {
     return (
       <div id="app">
-        <Route exact={true} path="/" component={HomePage}/>
-        <Route exact={true} path="/minesweeper" component={MineSweeperGame}/>
-        <Route exact={true} path="/tictactoe" component={TicTacToeGame}/>
+        <Router history={history}>
+          <Route exact={true} path={`/${RouterLinks.HomePage}`} component={HomePage} />
+          <Route exact={true} path={`/${RouterLinks.MineSweeper}`} component={MineSweeperGame} />
+          <Route exact={true} path={`/${RouterLinks.TicTacToeGame}`} component={TicTacToeGame} />
+        </Router>
       </div>
-    );
+    )
   }
 }
 

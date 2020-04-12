@@ -1,7 +1,8 @@
 export class GameBoardGenerator {
-  public generateBoard(rows: number, cols: number, numMines: number): number[][]{
+  public generateBoard(rows: number, cols: number, numMines: number): number[][] {
     const mineLocations = this.generateMineLocations(rows, cols, numMines);
     const grid = this.generateEmptyGrid(rows, cols);
+
     // tslint:disable-next-line
     for(const prop in mineLocations){
       const v = mineLocations[prop];
@@ -14,7 +15,7 @@ export class GameBoardGenerator {
             if (x<0 || y<0 || x>=rows || y>=cols || this.contains(mineLocations, x, y)) {
               continue;
             }
-            grid[x][y]++;
+            ++grid[x][y];
           }
         }
       });
